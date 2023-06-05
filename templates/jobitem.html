@@ -10,6 +10,6 @@ basically, we create a for loop to iterate through the JOBS list in app.py, for 
     {% endif %}
   </div>
   <div class="col-3">
-    <button type="button" class="btn btn-outline-secondary">Apply</button>
+    <a href="mailto:nico.leone2002@gmail.com?subject=Application%20for%20{{job['title']}}&body=My%20name%20%3A%20%3Cyour%20Name%20here%3E%0D%0A%0D%0AMy%20Resume%20Link%3A%20%3Cresume%20link%3E%0D%0A%0D%0AMy%20Linkedin%20Link%3A%20%3CLinkedin%20Link%3E" type="button" class="btn btn-outline-secondary">Apply</a><!--this uses a cool type of link called mailto, which opens the mail app on your PC with the subject already set. The link is created on a website called https://mailtolink.me/, which can autogenerate the href for a formatted email. -->
   </div>
 </div>

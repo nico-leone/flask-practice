@@ -9,15 +9,25 @@
     <style>
       #banner{
         height: 400px;
+        width: 100%;
+        object-fit:cover;
+        margin-bottom:20px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="static/banner.jpg" >
     <div class="container">
       <h1 class="text-center mt-3 mb-3">Among Us</h1>
-      <img class="img-fluid" id="banner" src="static/banner.jpg" >
-      <h2 class="text-center mt-3 mb-3">About Among Us</h2>
+      <div class="row" style='margin-bottom:16px;'>
+        <div class="col-md-8">
       <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="d-none d-md-block col-md-4"><!--couple of cool tags here, d-none makes it so that this image will actually not be visibe on mobile, and d-md-block means it wont show on devices of size medium or smaller. -->
+          <img src='/static/among.jpg' style="height:280px; border-radius:4px;">
+        </div>
+      </div>
       <h2 class="text-center mt-3 mb-3">Open Among Us SUS</h2>
       <!-- This div uses flask to generate templates stored elswhere using a for loop to iterate through the jobs array, the include section includes code stored in jobitem.html, which helps with organization.-->
       <div>
@@ -28,8 +38,10 @@
       </div>
       <div class="text-center">
       <button class="btn btn-secondary">Contact Us</button>
-        <p class="mt-4">Copyright 2077, your mom</p>
       </div>
+    </div>
+    <div style="margin-top:20px;">
+    {% include 'footer.html' %}
     </div>
   </body>
 </html>
