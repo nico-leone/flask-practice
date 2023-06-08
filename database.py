@@ -1,12 +1,12 @@
 #this file pretty much just acts as a connector to the database.
 from sqlalchemy import create_engine, text
-import os
+import os#for use in secrets
 
 #the parameters for this are a template to connect to a database through msql/mariadb that can be found
 #here: https://docs.sqlalchemy.org/en/20/dialects/mysql.html, along with the rest of the information on
 #how to set up a database using sqlalchemy. You can see from the mysql+pymysql that we need to 
 #install the pymysql library to use as a connector.
-db_connection_string = os.environ['DC_CONNECTION_STRING']
+db_connection_string = os.environ['DC_CONNECTION_STRING']#method for secret password
 
 #information found in the ssl secion of https://docs.sqlalchemy.org/en/20/dialects/mysql.html#mysqldb-ssl,
 #you need to replace the ca section with the one found in planetscale.coms args.
