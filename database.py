@@ -31,3 +31,16 @@ def load_jobs_from_db():
       #here we convert the sql row into a python dict, a type of data structure that stores value name and value.
       jobs.append(row._mapping)
     return jobs#returns the list of dictionaries.
+
+#new funciton to get a specific job
+def load_job_from_db(id):
+  with engine.connect() as conn:
+    #new sql statement that gets a specific jobs info based off of the id inputted
+    result = conn.execute(text("select * from jobs where id = :val"), {"val": id})
+    
+    row = result.fetchone()
+    if row is None:
+      return None
+    else:
+      return row._mapping
+  
